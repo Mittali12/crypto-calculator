@@ -1,8 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const CustomSelect = ({ padding, options, link, selectedOption, setSelectedOption, setTaxRate }) => {
     const [optionBox, setOptionBox] = useState(false);
     const [selectedIcon, setSelectedIcon] = useState(options[0].icon);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setOptionBox(false)
+        }, 2000);
+
+        return () => {
+            clearTimeout(timer)
+        }
+    }, [optionBox])
+
 
     const toggleOptionBox = () => {
         setOptionBox(!optionBox);
