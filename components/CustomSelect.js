@@ -21,8 +21,10 @@ const CustomSelect = ({ padding, options, link, selectedOption, setSelectedOptio
 
         <div className='relative w-full'>
             <div className={`px-3  ${padding} rounded-lg leading-normal bg-lightBlue sm:text-lg text-base font-medium text-black focus:outline-1 focus:outline focus:outline-blue focus:bg-white w-full focus:visited:none cursor-pointer relative flex justify-between`} onClick={toggleOptionBox}>
-
-                {selectedIcon && <img src={selectedIcon} alt="Selected Icon" />} <p>{selectedOption}</p>
+                <div className='flex gap-2'>
+                    {selectedIcon && <img src={selectedIcon} alt="Selected Icon" />}
+                    <p>{selectedOption}</p>
+                </div>
                 <img src="/images/chevronDownArrow.svg" alt="Dropdown Arrow" />
             </div>
             {optionBox && (
