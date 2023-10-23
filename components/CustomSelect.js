@@ -44,9 +44,6 @@ const CustomSelect = ({ padding, options, link, selectedOption, setSelectedOptio
                     onMouseLeave={() => {
                         setOptionBox(false)
                     }}
-                    onTouchEnd={() => {
-                        setOptionBox(false);
-                    }}
                 >
                     {link ? (options.map((option, index) => (
                         <div className='py-3 px-3 bg-lightBlue rounded-lg text-black sm:text-lg text-base font-medium flex justify-start gap-4' key={index} onClick={() => handleOptionSelect(option.text, index, option.icon)}>
